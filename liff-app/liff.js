@@ -245,6 +245,7 @@ function liffGetButtonStateCharacteristic(characteristic) {
     // (Get notified when button state changes)
     characteristic.startNotifications().then(() => {
         characteristic.addEventListener('characteristicvaluechanged', e => {
+            console.log(e);
             const val = (new Uint8Array(e.target.value.buffer))[0];
             if (val > 0) {
                 // press
@@ -253,6 +254,7 @@ function liffGetButtonStateCharacteristic(characteristic) {
                 // release
                 uiToggleStateButton(false);
                 uiCountPressButton();
+                kintonePostRecord();
             }
         });
     }).catch(error => {
@@ -268,4 +270,19 @@ function liffToggleDeviceLedState(state) {
     ).catch(error => {
         uiStatusError(makeErrorMsg(error), false);
     });
+}
+
+function kintonePostRecord() {
+    // JS SDKのコネクションとか
+    var kintoneAuth = new kintoneJSSDK.Auth();
+    var apiToken = 'RuEDdPDKyOcDeaSCj4cmgIWEr8hyij1nuavCROdX';
+    kintoneAuth.setApiToken(apiToken);
+    var kintoneConnection = new kintoneJSSDK.Connection(kintoneAuth);
+    const kintoneRecord = new kintoneJSSDK.Record(kintoneConnection);
+    var params = {
+        text: {
+            value: 'hogehoge'
+        }
+    };
+    kintoneRecord.addRecord(635, params);
 }
