@@ -1,3 +1,4 @@
+const kintoneJSSDK = require('./kintone-js-sdk.min.js');
 // User service UUID: Change this to your generated service UUID
 const USER_SERVICE_UUID         = 'd6d379f5-91b7-4563-ae20-5e02edec0ec2'; // LED, Button
 // User service characteristics
