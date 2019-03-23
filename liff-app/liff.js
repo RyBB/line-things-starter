@@ -250,6 +250,7 @@ function liffGetButtonStateCharacteristic(characteristic) {
             if (val > 0) {
                 // press
                 uiToggleStateButton(true);
+                kintonePostRecord();
             } else {
                 // release
                 uiToggleStateButton(false);
