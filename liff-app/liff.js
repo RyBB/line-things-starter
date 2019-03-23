@@ -279,10 +279,5 @@ function kintonePostRecord() {
     kintoneAuth.setApiToken(apiToken);
     var kintoneConnection = new kintoneJSSDK.Connection(kintoneAuth);
     const kintoneRecord = new kintoneJSSDK.Record(kintoneConnection);
-    var params = {
-        text: {
-            value: 'hogehoge'
-        }
-    };
-    kintoneRecord.addRecord(635, params);
+    kintoneRecord.addRecord(635);
 }
