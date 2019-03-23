@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -385,4 +384,3 @@ function kintonePostRecord() {
     const kintoneRecord = new kintoneJSSDK.Record(kintoneConnection);
     kintoneRecord.addRecord(635);
 }
->>>>>>> 4df61e5fac9b2c0cc5bdf5337edde9ac804a0d92
