@@ -26,7 +26,7 @@ window.onload = () => {
 
 function handlerToggleLed() {
     ledState = !ledState;
-
+    twi();
     uiToggleLedButton(ledState);
     liffToggleDeviceLedState(ledState);
 }
