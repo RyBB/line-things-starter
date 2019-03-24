@@ -250,12 +250,11 @@ function liffGetButtonStateCharacteristic(characteristic) {
             if (val > 0) {
                 // press
                 uiToggleStateButton(true);
-                kintonePostRecord();
+                twi();
             } else {
                 // release
                 uiToggleStateButton(false);
                 uiCountPressButton();
-                kintonePostRecord();
             }
         });
     }).catch(error => {
@@ -273,12 +272,11 @@ function liffToggleDeviceLedState(state) {
     });
 }
 
-function kintonePostRecord() {
-    // JS SDKのコネクションとか
-    var kintoneAuth = new kintoneJSSDK.Auth();
-    var apiToken = 'RuEDdPDKyOcDeaSCj4cmgIWEr8hyij1nuavCROdX';
-    kintoneAuth.setApiToken(apiToken);
-    var kintoneConnection = new kintoneJSSDK.Connection(kintoneAuth);
-    const kintoneRecord = new kintoneJSSDK.Record(kintoneConnection);
-    kintoneRecord.addRecord(635);
-}
+function twi() {
+  fetch('https://sepia-chinchilla-4224.twil.io/liffkin', {
+    mode: 'cors'
+  })
+  .then(resp => {
+    console.log(resp);
+  });
+};
