@@ -4,9 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <script src=" https://d.line-scdn.net/liff/1.0/sdk.js"></script>
-    <script src="kintone-js-sdk.min.js"></script>
-    <script src="liff.js"></script>
-    <link rel="stylesheet" type="text/css" href="liff.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vConsole/3.2.0/vconsole.min.js"></script>
+    <script src="https://js.cybozu.com/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+      var vConsole = new VConsole();
+    </script>
+    <script src="script.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css" />
   </head>
 
   <body>
@@ -47,7 +51,7 @@
       <hr />
       <!-- Toggle LED -->
       <p>
-        <button id="btn-led-toggle" class="btn btn-led-toggle" onclick="handlerToggleLed()">Switch LED ON</button>
+        <button id="btn-led-toggle" class="btn btn-led-toggle" onclick="handlerToggleLed()">Post kintone Record</button>
       </p>
       <hr />
     </div>
